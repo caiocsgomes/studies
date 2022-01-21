@@ -74,7 +74,6 @@ class ComplexEncoder(json.JSONEncoder):
         else:
             json.JSONEncoder.default(self, obj)
 
-class ComplexDecoder(json.J)
 john = Person(28, {
     "first": "portuguese",
     "second": "english"
