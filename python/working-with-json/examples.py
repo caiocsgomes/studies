@@ -1,11 +1,7 @@
-# How to use json with python
+import json
+from mimetypes import init
 
-If you are building an API using python like I'm doing now you will certainly need to learn how to use json with python. When you receive data from an endpoint you need to convert it to a class usually, and when you are sending data from an API you need to transform it into json before sending it. Here are some scenarios that probably will happen and we need to know how to handle.
-
-First lets get a dictionary to work on: 
-
-```python
-person = {
+person_dict = {
     "firstName": "Jane",
     "lastName": "Doe",
     "hobbies": ["running", "sky diving", "singing"],
@@ -21,24 +17,18 @@ person = {
         }
     ]
 }
-```
 
-## dict -> json (serializing)
-```python
-person_json = json.dumps(person)  # or json.dumps(person_dict, indent=4)
+# dict to json string (serializing)
+person_json = json.dumps(person_dict)  # or json.dumps(person_dict, indent=4)
 print(person_json)
 print(type(person_json))
-```
 
-## json -> dict (deserializing)
-```python
+
+# json string to dict (deserializing)
 person_dict = json.loads(person_json)
 print(person_dict)
 print(type(person_dict))
-```
 
-Lets define a class to work on the next examples:
-```python
 
 class Partner:
     def __init__(self, name) -> None:
@@ -74,21 +64,16 @@ class ComplexEncoder(json.JSONEncoder):
         else:
             json.JSONEncoder.default(self, obj)
 
-class ComplexDecoder(json.J)
+
 john = Person(28, {
     "first": "portuguese",
     "second": "english"
 }, Company("Itau", Partner("BB")))
-```
 
-## class -> json
-```python
+
+# class to json
 personclass_json = json.dumps(john.reprJSON(), cls=ComplexEncoder)
 print(personclass_json)
 print(type(personclass_json))
-```
 
-## json -> class
-```python
-
-```
+# json to class
