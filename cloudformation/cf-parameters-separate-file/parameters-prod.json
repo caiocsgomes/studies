@@ -1,0 +1,10 @@
+[
+    {
+        "ParameterKey": "BucketVersioningConfiguration",
+        "ParameterValue": "Enabled"
+    },
+    {
+        "ParameterKey": "BucketAccessControl",
+        "ParameterValue": "Private"
+    }
+]

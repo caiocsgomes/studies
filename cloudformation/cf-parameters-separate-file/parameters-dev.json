@@ -1,0 +1,10 @@
+[
+    {
+        "ParameterKey": "BucketVersioningConfiguration",
+        "ParameterValue": "Suspended"
+    },
+    {
+        "ParameterKey": "BucketAccessControl",
+        "ParameterValue": "PublicRead"
+    }
+]

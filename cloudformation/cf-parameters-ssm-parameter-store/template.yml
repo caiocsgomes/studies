@@ -1,0 +1,23 @@
+Parameters:
+  MyDefaultAZ:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: Default AZ for account
+    Default: /dev/account-default-az
+  
+  MyDevInstanceType:
+    Type: AWS::SSM::Parameter::Value<String>
+    Description: Default EC2 instance type for dev
+    Default: /dev/ec2/instanceType
+
+  MyDevImageId:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Description: Default Dev ImageId
+    Default: /aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-ebs
+
+Resources:
+  MyEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: !Ref MyDefaultAZ
+      InstanceType: !Ref MyDevInstanceType
+      ImageId: !Ref MyDevImageId

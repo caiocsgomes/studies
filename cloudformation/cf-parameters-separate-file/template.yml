@@ -1,0 +1,19 @@
+Parameters:
+  BucketAccessControl:
+    Description: Bucket access control type
+    Type: String
+  BucketVersioningConfiguration:
+    Description: Bucket versioning
+    Type: String
+  
+
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      AccessControl: !Ref BucketAccessControl
+      VersioningConfiguration:
+        Status: !Ref BucketVersioningConfiguration
+      Tags:
+        - Key: type
+          Value: example
