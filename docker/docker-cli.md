@@ -49,5 +49,8 @@ Exit container without killing it: CTRL + PQ
 ```sh
 # Create volume
 # mounted in /var/lib/docker/volumes/ on linux and good look trying to find it on windows
-docker volume create giropops
+docker volume create [volume name]
+
+# clean unused volumes
+docker volume prune
 ```
