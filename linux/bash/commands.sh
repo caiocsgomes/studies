@@ -29,3 +29,17 @@ free --kilo
 free --mega
 free --kibi
 free --mebi
+
+# find word in file or stream of data
+grep word file
+grep -v word file # all lines that do not have the word
+grep -i word file # case insensitive
+grep -ri word folder # search recursively in a folder
+grep -ril word folder # show files recursively in a folder
+
+# show first and last lined of file
+head -n numberoflines file
+tail -n numberoflines file
+
+# write file to STDOUT with line number
+nl file
